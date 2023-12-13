@@ -1,14 +1,10 @@
 import './App.css';
-import CompProps from './Components/CompProps';
-import List from './Components/List';
-import State from './Components/State';
+import TodoList from './Components/TodoList';
 
 function App() {
   return (
     <div>
-     <CompProps/>
-     <List />
-     <State />
+      <TodoList/>
     </div>
   );
 }
