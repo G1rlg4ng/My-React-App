@@ -9,9 +9,41 @@ const TodoList = () => {
     };
 
     const addTask = () => {
-        const newTodo = [...tasks, newTask]; // ...tasks(spread operator) append new task to old todolist array
-        setTasks(newTodo);
+        // ...tasks(spread operator) append new task to old todolist array
+        const task = {
+            id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
+            taskName: newTask,
+            completed: false,
+        }
+        setTasks([...tasks, task]);
     };
+
+    const deleteTask = (id) =>{
+        const newTodoList = tasks.filter((task) => {
+            // Alternative delete code
+            // return task !== taskName;
+            if(task.id === id){
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
+        setTasks(newTodoList);
+    }
+
+    const completeTask = (id) => {
+        setTasks(
+            tasks.map((task)=>{
+                if(task.id === id){
+                    return{ ...task, completed: true};
+                    
+                }else {
+                    return task;
+                }
+            })
+        )
+    }
 
   return (
     <div className='TodoList'>
@@ -21,7 +53,13 @@ const TodoList = () => {
         </div>
         <div className='list'></div>
         {tasks.map((task)=>{
-            return <h1>{task}</h1>
+            return (
+                <div className='task'>
+                <h3>{task.taskName}</h3>
+                <button onClick={() => deleteTask(task.id)}>X</button>
+                <button onClick={()=> completeTask(task.id)} className={task.completed ? 'completed' : ''}>Complete</button>
+                </div>
+            )
         })}
     </div>
   )
