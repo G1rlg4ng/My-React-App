@@ -56,7 +56,7 @@ const TodoList = () => {
             return (
                 <div className='task'>
                 <h3>{task.taskName}</h3>
-                <button onClick={() => deleteTask(task.id)}>X</button>
+                <button onClick={() => deleteTask(task.id)}>Delete</button>
                 <button onClick={()=> completeTask(task.id)} className={task.completed ? 'completed' : ''}>Complete</button>
                 </div>
             )
