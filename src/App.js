@@ -1,10 +1,10 @@
 import './App.css';
-import TodoList from './Components/TodoList';
+import FetchAPI from './Components/FetchAPI';
 
 function App() {
   return (
     <div>
-      <TodoList/>
+      <FetchAPI/>
     </div>
   );
 }
