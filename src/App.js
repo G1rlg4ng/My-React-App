@@ -1,10 +1,11 @@
 import './App.css';
-import FetchAPI from './Components/FetchAPI';
+import React from 'react';
+import RouterDom from './Components/RouterDom';
 
 function App() {
   return (
     <div>
-      <FetchAPI/>
+      <RouterDom/>
     </div>
   );
 }
