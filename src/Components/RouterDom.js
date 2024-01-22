@@ -5,13 +5,14 @@ import { About } from "./pages/About"
 import { Contact } from "./pages/Contact"
 import { NotFound } from "./pages/NotFound"
 
+
 export const AppContext = createContext();
 
 const RouterDom = () => {
-  const [username, setUsername] = useState("CodeBunny");
+ 
   return (
     <div>
-      <AppContext.Provider value={{username, setUsername}}>
+     
         <Router>
           {/* <Navbar/> */}
           <Routes>
@@ -21,7 +22,7 @@ const RouterDom = () => {
               <Route path="*" element={<NotFound/>}/>
           </Routes>
         </Router>
-      </AppContext.Provider>
+      
     </div>
   )
 }
